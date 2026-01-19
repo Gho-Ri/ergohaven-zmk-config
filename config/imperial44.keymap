@@ -31,6 +31,13 @@
 
             label = "M3";
         };
+
+        m1: m1 {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp RG(SPACE) &kp HASH &kp RG(SPACE)>;
+            label = "M1";
+        };
     };
 
     keymap {
@@ -52,10 +59,10 @@
 
         nav {
             bindings = <
-&m0     &kp N1  &kp N2  &kp N3  &kp N4      &kp N5                      &kp N6        &kp N7    &kp N8          &kp N9           &kp N0  &kp PRINTSCREEN
-&trans  &trans  &trans  &trans  &kp RU_DOT  &kp HASH                    &trans        &trans    &kp UP          &trans           &trans  &kp PAGE_UP
-&trans  &trans  &trans  &trans  &trans      &kp DEL   &trans    &trans  &kp CAPSLOCK  &kp LEFT  &kp DOWN_ARROW  &kp RIGHT_ARROW  &trans  &kp PG_DN
-                                &trans      &trans    &trans    &trans  &mo 3         &trans
+&m0     &kp N1  &kp N2  &kp N3  &kp N4      &kp N5                     &kp N6        &kp N7    &kp N8          &kp N9           &kp N0  &kp PRINTSCREEN
+&trans  &trans  &trans  &trans  &kp RU_DOT  &m1                        &trans        &trans    &kp UP          &trans           &trans  &kp PAGE_UP
+&trans  &trans  &trans  &trans  &trans      &kp DEL  &trans    &trans  &kp CAPSLOCK  &kp LEFT  &kp DOWN_ARROW  &kp RIGHT_ARROW  &trans  &kp PG_DN
+                                &trans      &trans   &trans    &trans  &mo 3         &trans
             >;
 
             display-name = "Nav";
