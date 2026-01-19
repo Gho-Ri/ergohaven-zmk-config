@@ -13,13 +13,6 @@
             label = "M0";
         };
 
-        m1: m1 {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings = <&kp POUND>;
-            label = "M1";
-        };
-
         m2: m2 {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
@@ -30,7 +23,11 @@
         m3: m3 {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&kp LA(KP_NUMBER_0) &kp LA(KP_NUMBER_1) &kp LA(KP_NUMBER_7) &kp LA(KP_NUMBER_6)>;
+            bindings =
+                <&macro_press>,
+                <&kp LEFT_ALT &kp KP_NUMBER_0 &kp KP_NUMBER_1 &kp KP_NUMBER_7 &kp KP_NUMBER_6>,
+                <&macro_release>;
+
             label = "M3";
         };
     };
@@ -54,10 +51,10 @@
 
         nav {
             bindings = <
-&m0     &kp N1  &kp N2  &kp N3  &kp N4      &kp N5                     &kp N6        &kp N7    &kp N8          &kp N9           &kp N0  &kp PRINTSCREEN
-&trans  &trans  &trans  &trans  &kp RU_DOT  &m1                        &trans        &trans    &kp UP          &trans           &trans  &kp PAGE_UP
-&trans  &trans  &trans  &trans  &trans      &kp DEL  &trans    &trans  &kp CAPSLOCK  &kp LEFT  &kp DOWN_ARROW  &kp RIGHT_ARROW  &trans  &kp PG_DN
-                                &trans      &trans   &trans    &trans  &mo 3         &trans
+&m0     &kp N1  &kp N2  &kp N3  &kp N4      &kp N5                       &kp N6        &kp N7    &kp N8          &kp N9           &kp N0  &kp PRINTSCREEN
+&trans  &trans  &trans  &trans  &kp RU_DOT  &kp POUND                    &trans        &trans    &kp UP          &trans           &trans  &kp PAGE_UP
+&trans  &trans  &trans  &trans  &trans      &kp DEL    &trans    &trans  &kp CAPSLOCK  &kp LEFT  &kp DOWN_ARROW  &kp RIGHT_ARROW  &trans  &kp PG_DN
+                                &trans      &trans     &trans    &trans  &mo 3         &trans
             >;
 
             display-name = "Nav";
@@ -65,10 +62,10 @@
 
         sym {
             bindings = <
-&trans  &trans  &trans    &kp LS(N6)             &trans     &kp GRAVE                    &trans     &kp UNDER  &kp SQT    &kp LBKT  &kp RBKT  &trans
-&trans  &trans  &kp LPAR  &kp RIGHT_PARENTHESIS  &kp MINUS  &kp EQUAL                    &kp PRCNT  &kp LBRC   &kp SEMI   &kp RBRC  &kp EXCL  &trans
-&trans  &trans  &trans    &kp NON_US_BACKSLASH   &kp ASTRK  &kp SLASH  &trans    &trans  &trans     &kp PIPE   &kp TILDE  &kp AMPS  &kp DLLR  &trans
-                                                 &trans     &mo 3      &trans    &trans  &trans     &trans
+&trans  &trans  &trans    &kp LS(N6)             &trans     &kp GRAVE                       &trans     &kp UNDER  &kp SQT    &kp LBKT  &kp RBKT  &trans
+&trans  &trans  &kp LPAR  &kp RIGHT_PARENTHESIS  &kp MINUS  &kp EQUAL                       &kp PRCNT  &kp LBRC   &kp SEMI   &kp RBRC  &kp EXCL  &trans
+&trans  &trans  &trans    &kp NON_US_BACKSLASH   &kp ASTRK  &kp RU_SLASH  &trans    &trans  &trans     &kp PIPE   &kp TILDE  &kp AMPS  &kp DLLR  &trans
+                                                 &trans     &mo 3         &trans    &trans  &trans     &trans
             >;
 
             display-name = "Symbols";
