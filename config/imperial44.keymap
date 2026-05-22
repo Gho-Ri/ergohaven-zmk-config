@@ -26,10 +26,10 @@
             bindings =
                 <&macro_press>,
                 <&kp LEFT_ALT &kp KP_NUMBER_0 &kp KP_NUMBER_1 &kp KP_NUMBER_7 &kp KP_NUMBER_6>,
-                <&macro_wait_time 10>,
+                <&macro_wait_time 20>,
                 <&macro_release>,
                 <&kp LEFT_ALT &kp KP_NUMBER_0 &kp KP_NUMBER_1 &kp KP_NUMBER_7 &kp KP_NUMBER_6>,
-                <&macro_wait_time 10>;
+                <&macro_wait_time 20>;
 
             label = "M3";
         };
@@ -39,11 +39,11 @@
             #binding-cells = <0>;
             bindings =
                 <&kp GRAVE &kp GRAVE &kp GRAVE>,
-                <&macro_wait_time 10>,
+                <&macro_wait_time 20>,
                 <&kp LS(ENTER) &kp LS(ENTER)>,
-                <&macro_wait_time 10>,
+                <&macro_wait_time 20>,
                 <&kp GRAVE &kp GRAVE &kp GRAVE>,
-                <&macro_wait_time 10>,
+                <&macro_wait_time 20>,
                 <&kp UP>;
 
             label = "M4";
@@ -55,10 +55,10 @@
             bindings =
                 <&macro_press>,
                 <&kp LEFT_ALT &kp KP_NUMBER_0 &kp KP_NUMBER_1 &kp KP_NUMBER_5 &kp KP_NUMBER_1>,
-                <&macro_wait_time 10>,
+                <&macro_wait_time 20>,
                 <&macro_release>,
                 <&kp LEFT_ALT &kp KP_NUMBER_0 &kp KP_NUMBER_1 &kp KP_NUMBER_5 &kp KP_NUMBER_1>,
-                <&macro_wait_time 10>;
+                <&macro_wait_time 20>;
 
             label = "M_DEFIS";
         };
@@ -68,11 +68,11 @@
             #binding-cells = <0>;
             bindings =
                 <&kp LG(SPACE)>,
-                <&macro_wait_time 10>,
+                <&macro_wait_time 20>,
                 <&kp LS(NUMBER_2)>,
-                <&macro_wait_time 10>,
+                <&macro_wait_time 20>,
                 <&kp LG(SPACE)>,
-                <&macro_wait_time 10>;
+                <&macro_wait_time 20>;
 
             label = "M_DOG";
         };
@@ -82,11 +82,11 @@
             #binding-cells = <0>;
             bindings =
                 <&kp LG(SPACE)>,
-                <&macro_wait_time 10>,
+                <&macro_wait_time 20>,
                 <&kp LS(NUMBER_3)>,
-                <&macro_wait_time 10>,
+                <&macro_wait_time 20>,
                 <&kp LG(SPACE)>,
-                <&macro_wait_time 10>;
+                <&macro_wait_time 20>;
 
             label = "M_HASHTEG";
         };
