@@ -50,10 +50,10 @@
             #binding-cells = <0>;
             bindings =
                 <&macro_press>,
-                <&kp LEFT_ALT &kp KP_NUMBER_0 &kp KP_NUMBER_6 &kp KP_NUMBER_4>,
+                <&kp LEFT_ALT &kp KP_NUMBER_6 &kp KP_NUMBER_4>,
                 <&macro_wait_time 10>,
                 <&macro_release>,
-                <&kp LEFT_ALT &kp KP_NUMBER_0 &kp KP_NUMBER_6 &kp KP_NUMBER_4>,
+                <&kp LEFT_ALT &kp KP_NUMBER_6 &kp KP_NUMBER_4>,
                 <&macro_wait_time 10>;
 
             label = "M5";
@@ -85,6 +85,29 @@
                 <&macro_wait_time 10>;
 
             label = "M1";
+        };
+
+        m_defis: m_defis {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings =
+                <&macro_press>,
+                <&kp LEFT_ALT &kp KP_NUMBER_0 &kp KP_NUMBER_1 &kp KP_NUMBER_5 &kp KP_NUMBER_1>,
+                <&macro_wait_time 10>,
+                <&macro_release>,
+                <&kp LEFT_ALT &kp KP_NUMBER_0 &kp KP_NUMBER_1 &kp KP_NUMBER_5 &kp KP_NUMBER_1>,
+                <&macro_wait_time 10>;
+
+            label = "M_DEFIS";
+        };
+    };
+
+    behaviors {
+        td_defis: td_defis {
+            compatible = "zmk,behavior-tap-dance";
+            label = "TD_DEFIS";
+            #binding-cells = <0>;
+            bindings = <&kp MINUS>, <&m_defis>;
         };
     };
 
@@ -119,7 +142,7 @@
         sym {
             bindings = <
 &trans  &trans  &trans    &kp LS(N6)             &m3        &kp GRAVE                       &m4        &kp UNDER  &kp SQT    &kp LBKT  &kp RBKT  &trans
-&trans  &trans  &kp LPAR  &kp RIGHT_PARENTHESIS  &kp MINUS  &kp EQUAL                       &kp PRCNT  &kp LBRC   &kp SEMI   &kp RBRC  &kp EXCL  &trans
+&trans  &trans  &kp LPAR  &kp RIGHT_PARENTHESIS  &td_defis  &kp EQUAL                       &kp PRCNT  &kp LBRC   &kp SEMI   &kp RBRC  &kp EXCL  &trans
 &trans  &trans  &trans    &kp NON_US_BACKSLASH   &kp ASTRK  &kp RU_SLASH  &trans    &trans  &trans     &kp PIPE   &kp TILDE  &kp AMPS  &kp DLLR  &trans
                                                  &trans     &mo 3         &trans    &trans  &trans     &trans
             >;
