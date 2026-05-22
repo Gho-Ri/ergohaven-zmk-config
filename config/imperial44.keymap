@@ -6,21 +6,21 @@
 
 / {
     macros {
-        m0: m0 {
+        m_altF4: m0 {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             bindings = <&kp LA(F4)>;
             label = "M0";
         };
 
-        m2: m2 {
+        m_screenshot: m2 {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             bindings = <&kp LG(LS(S))>;
             label = "M2";
         };
 
-        m3: m3 {
+        m_gradus: m3 {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             bindings =
@@ -34,57 +34,19 @@
             label = "M3";
         };
 
-        m4: m4 {
+        m_markdown: m4 {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             bindings =
-                <&m_backtick &m_backtick &m_backtick &kp LS(ENTER) &kp LS(ENTER)>,
+                <&kp GRAVE &kp GRAVE &kp GRAVE>,
                 <&macro_wait_time 10>,
-                <&m_backtick &m_backtick &m_backtick &kp UP>;
+                <&kp LS(ENTER) &kp LS(ENTER)>,
+                <&macro_wait_time 10>,
+                <&kp GRAVE &kp GRAVE &kp GRAVE>,
+                <&macro_wait_time 10>,
+                <&kp UP>;
 
             label = "M4";
-        };
-
-        m5: m5 {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings =
-                <&macro_press>,
-                <&kp LEFT_ALT &kp KP_NUMBER_6 &kp KP_NUMBER_4>,
-                <&macro_wait_time 10>,
-                <&macro_release>,
-                <&kp LEFT_ALT &kp KP_NUMBER_6 &kp KP_NUMBER_4>,
-                <&macro_wait_time 10>;
-
-            label = "M5";
-        };
-
-        m_backtick: m_backtick {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings =
-                <&macro_press>,
-                <&kp LEFT_ALT &kp KP_NUMBER_9 &kp KP_NUMBER_6>,
-                <&macro_wait_time 10>,
-                <&macro_release>,
-                <&kp LEFT_ALT &kp KP_NUMBER_9 &kp KP_NUMBER_6>,
-                <&macro_wait_time 10>;
-
-            label = "M_BACKTICK";
-        };
-
-        m1: m1 {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings =
-                <&macro_press>,
-                <&kp LEFT_ALT &kp KP_NUMBER_3 &kp KP_NUMBER_5>,
-                <&macro_wait_time 10>,
-                <&macro_release>,
-                <&kp LEFT_ALT &kp KP_NUMBER_3 &kp KP_NUMBER_5>,
-                <&macro_wait_time 10>;
-
-            label = "M1";
         };
 
         m_defis: m_defis {
@@ -99,6 +61,34 @@
                 <&macro_wait_time 10>;
 
             label = "M_DEFIS";
+        };
+
+        m_dog: m_dog {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings =
+                <&kp LG(SPACE)>,
+                <&macro_wait_time 10>,
+                <&kp LS(NUMBER_2)>,
+                <&macro_wait_time 10>,
+                <&kp LG(SPACE)>,
+                <&macro_wait_time 10>;
+
+            label = "M_DOG";
+        };
+
+        m_hashtag: m_hashteg {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings =
+                <&kp LG(SPACE)>,
+                <&macro_wait_time 10>,
+                <&kp LS(NUMBER_3)>,
+                <&macro_wait_time 10>,
+                <&kp LG(SPACE)>,
+                <&macro_wait_time 10>;
+
+            label = "M_HASHTEG";
         };
     };
 
@@ -130,10 +120,10 @@
 
         nav {
             bindings = <
-&m0     &kp N1  &kp N2  &kp N3  &kp N4      &kp N5                     &kp N6        &kp N7    &kp N8          &kp N9           &kp N0  &kp PRINTSCREEN
-&trans  &trans  &trans  &m5     &kp RU_DOT  &m1                        &trans        &trans    &kp UP          &trans           &trans  &kp PAGE_UP
-&trans  &trans  &trans  &trans  &trans      &kp DEL  &trans    &trans  &kp CAPSLOCK  &kp LEFT  &kp DOWN_ARROW  &kp RIGHT_ARROW  &trans  &kp PG_DN
-                                &trans      &trans   &trans    &trans  &mo 3         &trans
+&m_altF4  &kp N1  &kp N2  &kp N3  &kp N4      &kp N5                        &kp N6        &kp N7    &kp N8          &kp N9           &kp N0  &kp PRINTSCREEN
+&trans    &trans  &trans  &m_dog  &kp RU_DOT  &m_hashtag                    &trans        &trans    &kp UP          &trans           &trans  &kp PAGE_UP
+&trans    &trans  &trans  &trans  &trans      &kp DEL     &trans    &trans  &kp CAPSLOCK  &kp LEFT  &kp DOWN_ARROW  &kp RIGHT_ARROW  &trans  &kp PG_DN
+                                  &trans      &trans      &trans    &trans  &mo 3         &trans
             >;
 
             display-name = "Nav";
@@ -141,10 +131,10 @@
 
         sym {
             bindings = <
-&trans  &trans  &trans    &kp LS(N6)             &m3        &kp GRAVE                       &m4        &kp UNDER  &kp SQT    &kp LBKT  &kp RBKT  &trans
-&trans  &trans  &kp LPAR  &kp RIGHT_PARENTHESIS  &td_defis  &kp EQUAL                       &kp PRCNT  &kp LBRC   &kp SEMI   &kp RBRC  &kp EXCL  &trans
-&trans  &trans  &trans    &kp NON_US_BACKSLASH   &kp ASTRK  &kp RU_SLASH  &trans    &trans  &trans     &kp PIPE   &kp TILDE  &kp AMPS  &kp DLLR  &trans
-                                                 &trans     &mo 3         &trans    &trans  &trans     &trans
+&trans  &trans  &trans    &kp LS(N6)             &m_gradus  &kp GRAVE                       &m_markdown  &kp UNDER  &kp SQT    &kp LBKT  &kp RBKT  &trans
+&trans  &trans  &kp LPAR  &kp RIGHT_PARENTHESIS  &td_defis  &kp EQUAL                       &kp PRCNT    &kp LBRC   &kp SEMI   &kp RBRC  &kp EXCL  &trans
+&trans  &trans  &trans    &kp NON_US_BACKSLASH   &kp ASTRK  &kp RU_SLASH  &trans    &trans  &trans       &kp PIPE   &kp TILDE  &kp AMPS  &kp DLLR  &trans
+                                                 &trans     &mo 3         &trans    &trans  &trans       &trans
             >;
 
             display-name = "Symbols";
@@ -152,7 +142,7 @@
 
         adj {
             bindings = <
-&bootloader  &trans  &kp F1  &kp F2   &kp F3   &kp F4                     &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2      &bt BT_SEL 3  &bt BT_SEL 4  &m2
+&bootloader  &trans  &kp F1  &kp F2   &kp F3   &kp F4                     &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2      &bt BT_SEL 3  &bt BT_SEL 4  &m_screenshot
 &trans       &trans  &kp F5  &kp F6   &kp F7   &kp F8                     &out OUT_BLE  &kp C_VOL_DN  &kp C_MUTE        &kp C_VOL_UP  &trans        &bt BT_CLR
 &trans       &trans  &kp F9  &kp F10  &kp F11  &kp F12  &trans    &trans  &out OUT_USB  &kp C_PREV    &kp C_PLAY_PAUSE  &kp C_NEXT    &trans        &trans
                                       &trans   &trans   &trans    &trans  &trans        &trans
