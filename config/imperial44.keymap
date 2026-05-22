@@ -32,13 +32,6 @@
             label = "M3";
         };
 
-        m1: m1 {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings = <&kp RG(SPACE) &kp HASH &kp RG(SPACE)>;
-            label = "M1";
-        };
-
         m4: m4 {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
@@ -76,6 +69,18 @@
                 <&kp LEFT_ALT &kp KP_NUMBER_9 &kp KP_NUMBER_6>;
 
             label = "M_BACKTICK";
+        };
+
+        m1: m1 {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings =
+                <&macro_press>,
+                <&kp LEFT_ALT &kp KP_NUMBER_3 &kp KP_NUMBER_5>,
+                <&macro_release>,
+                <&kp LEFT_ALT &kp KP_NUMBER_3 &kp KP_NUMBER_5>;
+
+            label = "M1";
         };
     };
 
