@@ -102,6 +102,16 @@
         };
     };
 
+    combos {
+        compatible = "zmk,combos";
+
+        layer4tog {
+            bindings = <&tog 4>;
+            key-positions = <39 24>;
+            layers = <0 4>;
+        };
+    };
+
     keymap {
         compatible = "zmk,keymap";
 
