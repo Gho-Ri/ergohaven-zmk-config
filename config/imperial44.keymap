@@ -114,6 +114,15 @@
             #binding-cells = <2>;
             tapping-term-ms = <150>;
         };
+
+        mouse_move: mouse_move {
+            compatible = "zmk,behavior-input-two-axis";
+            label = "MOUSE_MOVE";
+            #binding-cells = <1>;
+            x-input-code = <20>;
+            y-input-code = <20>;
+            time-to-max-speed-ms = <300>;
+        };
     };
 
     combos {
@@ -178,9 +187,9 @@
 
         Mouse {
             bindings = <
-&trans  &trans  &trans          &trans          &trans           &trans                       &trans     &trans          &trans          &trans           &trans  &trans
-&trans  &trans  &trans          &msc SCRL_UP    &trans           &trans                       &trans     &trans          &mmv MOVE_UP    &trans           &trans  &kp LEFT_SHIFT
-&trans  &trans  &msc SCRL_LEFT  &msc SCRL_DOWN  &msc SCRL_RIGHT  &trans  &trans    &trans     &trans     &mmv MOVE_LEFT  &mmv MOVE_DOWN  &mmv MOVE_RIGHT  &trans  &kp LCTRL
+&trans  &trans  &trans          &trans          &trans           &trans                       &trans     &trans                 &trans                 &trans                  &trans  &trans
+&trans  &trans  &trans          &msc SCRL_UP    &trans           &trans                       &trans     &trans                 &mouse_move MOVE_UP    &trans                  &trans  &kp LEFT_SHIFT
+&trans  &trans  &msc SCRL_LEFT  &msc SCRL_DOWN  &msc SCRL_RIGHT  &trans  &trans    &trans     &trans     &mouse_move MOVE_LEFT  &mouse_move MOVE_DOWN  &mouse_move MOVE_RIGHT  &trans  &kp LCTRL
                                                 &trans           &tog 4  &trans    &mkp LCLK  &mkp MCLK  &mkp RCLK
             >;
         };
